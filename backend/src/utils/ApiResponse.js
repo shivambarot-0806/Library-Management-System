@@ -6,3 +6,5 @@ class apiResponce{
         this.success = statusCode < 400; // because status codes more than 400 are server or client error, it will return bool value.
     }
 }
+
+export default apiResponce;

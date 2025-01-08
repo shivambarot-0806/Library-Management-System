@@ -19,3 +19,5 @@ class apiErrorHandler extends Error{
         }
     }
 }
+
+export default apiErrorHandler; 
