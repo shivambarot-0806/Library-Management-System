@@ -25,22 +25,3 @@ connectDB()
 }
 )
 
-
-// ;( async () => {
-//     try {
-//         await sequelize.authenticate();
-//         console.log("Connection successfully established..................");
-
-//         app.on("error", (error) => {
-//             console.log("ERRORR !!!!", error);
-//             throw error;
-//         })
-
-//         app.listen(process.env.PORT ,() => {
-//             console.log(`App is listening on port ${process.env.PORT}`);
-//         })
-//     } catch (error) {
-//         console.error("Error: Unable to connect Database !!!!!!!!!!!!!!!!!", error);
-//     }
-// })()
-
