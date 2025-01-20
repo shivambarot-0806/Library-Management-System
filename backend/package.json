@@ -1,42 +1,44 @@
 {
-  "name": "backend",
-  "version": "1.0.0",
-  "description": "a platform for managing library books ",
-  "type": "module",
-  "main": "index.js",
-  "scripts": {
-    "dev": "nodemon src/index.js"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "a platform for managing library books ",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npx pretty-quick --staged"
+        }
+    },
+    "keywords": [
+        "lms",
+        "books",
+        "library"
+    ],
+    "author": "Team CodeXus",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/node": "^22.10.5",
+        "husky": "^9.1.7",
+        "nodemon": "^3.1.9",
+        "prettier": "^3.4.2",
+        "pretty-quick": "^4.0.0",
+        "sequelize-cli": "^6.6.2"
+    },
+    "dependencies": {
+        "backend": "file:",
+        "bcrypt": "^5.1.1",
+        "body-parser": "^1.20.3",
+        "cloudinary": "^2.5.1",
+        "cookie-parser": "^1.4.7",
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.7",
+        "express": "^4.21.2",
+        "jsonwebtoken": "^9.0.2",
+        "multer": "^1.4.5-lts.1",
+        "pg": "^8.13.1",
+        "sequelize": "^6.37.5"
     }
-  },
-  "keywords": [
-    "lms",
-    "books",
-    "library"
-  ],
-  "author": "Team CodeXus",
-  "license": "ISC",
-  "devDependencies": {
-    "husky": "^9.1.7",
-    "nodemon": "^3.1.9",
-    "prettier": "^3.4.2",
-    "pretty-quick": "^4.0.0"
-  },
-  "dependencies": {
-    "backend": "file:",
-    "bcrypt": "^5.1.1",
-    "body-parser": "^1.20.3",
-    "cloudinary": "^2.5.1",
-    "cookie-parser": "^1.4.7",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2",
-    "jsonwebtoken": "^9.0.2",
-    "multer": "^1.4.5-lts.1",
-    "pg": "^8.13.1",
-    "sequelize": "^6.37.5"
-  }
 }

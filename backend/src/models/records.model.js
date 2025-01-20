@@ -48,7 +48,7 @@ Record.associate = (models) => {
         as: "user",
     });
     Record.belongsToMany(models.Book, {
-        through: "RecordBooks",
+        through: "recordBooks",
         foreignKey: "recordID",
         as: "books",
     });
