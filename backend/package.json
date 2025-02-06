@@ -5,7 +5,8 @@
     "type": "module",
     "main": "index.js",
     "scripts": {
-        "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
+        "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js",
+        "migrate": "node --experimental-json-modules --no-warnings ./config/config.js"
     },
     "husky": {
         "hooks": {
@@ -39,6 +40,7 @@
         "jsonwebtoken": "^9.0.2",
         "multer": "^1.4.5-lts.1",
         "pg": "^8.13.1",
-        "sequelize": "^6.37.5"
+        "sequelize": "^6.37.5",
+        "umzug": "^3.8.2"
     }
 }
