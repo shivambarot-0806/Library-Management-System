@@ -41,8 +41,7 @@ const signUp = asyncHandler(async (req, res) => {
         attributes: {
             exclude: ['password', 'refreshToken']
         }
-    }
-);
+    });
     // handling errors while creating user 
     if(!createdUser){
         throw new ApiError(500, "Somthing went wrong while creating user.");
