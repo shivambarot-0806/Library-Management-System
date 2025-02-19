@@ -60,28 +60,43 @@ User.prototype.isPasswordCorrect = async function (password) {
 };
 
 User.prototype.generateAccessToken = function () {
-    return jwt.sign(
-        {
-            id: this.id,
-            email: this.email,
-            password: this.password,
-            name: this.name,
-        },
-        process.env.ACCESS_TOKEN_SECRET,
-        {
-            expiresIn: process.env.ACCESS_TOKEN_EXPIRY,
-        }
-    );
+    console.log("Generating access token for user:", this.id);
+    try {
+        const token = jwt.sign(
+            {
+                id: this.id,
+                email: this.email,
+                name: this.name
+            },
+            process.env.ACCESS_TOKEN_SECRET,
+            {
+                expiresIn: process.env.ACCESS_TOKEN_EXPIRY || '1d'
+            }
+        );
+        console.log("Access token generated successfully");
+        return token;
+    } catch (error) {
+        console.error("Error generating access token:", error);
+        throw error;
+    }
 };
 
 User.prototype.generateRefreshToken = function () {
-    return jwt.sign(
-        {
-            _id: this._id,
-        },
-        process.env.REFRESH_TOKEN_SECRET,
-        {
-            expiresIn: process.env.REFRESH_TOKEN_EXPIRY,
-        }
-    );
+    console.log("Generating refresh token for user:", this.id);
+    try {
+        const token = jwt.sign(
+            {
+                id: this.id
+            },
+            process.env.REFRESH_TOKEN_SECRET,
+            {
+                expiresIn: process.env.REFRESH_TOKEN_EXPIRY || '10d'
+            }
+        );
+        console.log("Refresh token generated successfully");
+        return token;
+    } catch (error) {
+        console.error("Error generating refresh token:", error);
+        throw error;
+    }
 };
